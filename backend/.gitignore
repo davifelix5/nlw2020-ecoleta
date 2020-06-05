@@ -1,33 +1,6 @@
-# OS X
-.DS_Store*
-Icon?
-._*
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Linux
-.directory
-*~
-
-
-# npm
+database.sqlite
 node_modules
 package-lock.json
-*.log
-*.gz
-
-# images
 uploads/*
 !uploads/.gitkeep
-
-#DB
-database/*.sqlite
-
-# Coveralls
-coverage
-
-# Benchmarking
-benchmarks/graphs
+*.sqlite
