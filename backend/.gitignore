@@ -20,7 +20,11 @@ package-lock.json
 *.gz
 
 # images
-uploads
+uploads/*
+!uploads/.gitkeep
+
+#DB
+database/*.sqlite
 
 # Coveralls
 coverage
