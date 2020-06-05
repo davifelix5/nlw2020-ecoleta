@@ -3556,8 +3556,8 @@ logkitty@0.7.1:
     dayjs "^1.8.15"
     yargs "^15.1.0"
 
-logkitty@^0.6.0:
-  version "0.6.1"
+logkitty@^0.7.1:
+  version "0.7.1"
   resolved "https://registry.yarnpkg.com/logkitty/-/logkitty-0.6.1.tgz#fe29209669d261539cbd6bb998a136fc92a1a05c"
   integrity sha512-cHuXN8qUZuzX/7kB6VyS7kB4xyD24e8gyHXIFNhIv+fjW3P+jEXNUhj0o/7qWJtv7UZpbnPgUqzu/AZQ8RAqxQ==
   dependencies:
