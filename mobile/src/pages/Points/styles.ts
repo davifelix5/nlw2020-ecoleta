@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { vw } from './../../utils/viewport-units'
 import Constants from 'expo-constants'
 
 const styles = StyleSheet.create({
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'Roboto_400Regular',
     color: '#FFF',
-    fontSize: 13,
+    fontSize: vw(2), // Mostra todo o texto independendo do tamanho
     lineHeight: 23,
   },
 
