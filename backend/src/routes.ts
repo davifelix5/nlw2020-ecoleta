@@ -1,13 +1,11 @@
 import express from 'express';
 import PointsController from './controllers/PointsControlles'
 import ItemsController from './controllers/ItemsController'
-import multer from 'multer'
-import multerConfig from './config/multer'
+import upload from './config/multer'
 
 import { celebrate, Joi } from 'celebrate'
 
 const routes = express.Router()
-const upload = multer(multerConfig)
 
 const pointsController = new PointsController()
 const itemsController = new ItemsController()

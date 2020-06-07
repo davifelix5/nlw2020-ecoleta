@@ -2,7 +2,8 @@ import multer from 'multer'
 import { randomBytes } from 'crypto'
 import path from 'path'
 
-export default {
+
+export default multer({
     storage: multer.diskStorage({
         destination: path.resolve(__dirname, '..', '..', 'uploads'),
         filename(request, file, callback) {
@@ -11,5 +12,16 @@ export default {
 
             callback(null, fileName)
         }
-    })
-}
+    }),
+    fileFilter(request, file, callback) {
+        const fileExtension = path.extname(file.originalname)
+        const permitedExts = ['.png', '.jpg', '.jpeg']
+        const checkedExts = permitedExts.filter(ext => ext == fileExtension)
+
+        if (checkedExts.length == 0) {
+            return callback(new Error('Apenas images são permitidas'))
+        }
+
+        return callback(null, true)
+    }
+})
