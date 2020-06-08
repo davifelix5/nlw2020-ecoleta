@@ -6,8 +6,7 @@
 }
 
 #page-create-point header {
-  margin-top: 48px;
-
+  padding-top: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,6 +145,11 @@
 }
 
 #page-create-point form button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
   width: 260px;
   height: 56px;
   background: var(--primary-color);
