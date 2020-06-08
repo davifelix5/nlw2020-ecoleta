@@ -7,6 +7,8 @@ import { LeafletMouseEvent } from 'leaflet'
 import Dropzone from './../../componets/Dropzone'
 import api from '../../services/api'
 import ibge from '../../services/ibge'
+import Loader from '../../componets/Loader'
+import { FaCheckCircle } from 'react-icons/fa'
 
 import './styles.css'
 
@@ -55,6 +57,8 @@ const CreatePoint = () => {
     const [selectedItems, setSelectedItems] = useState<number[]>([])
     const [mapPosition, setMapPosition] = useState<[number, number]>([0, 0])
     const [selectedFile, setSelectedFile] = useState<File>()
+
+    const [loading, setLoading] = useState(false)
 
     const [initialPosition, setInicialPosition] = useState<[number, number]>([0, 0])
 
@@ -121,6 +125,7 @@ const CreatePoint = () => {
     async function handleSubmit(event: FormEvent) {
         event.preventDefault()
 
+        setLoading(true)
 
         const { name, email, whatsapp } = formData
         const uf = selectedUf
@@ -142,7 +147,7 @@ const CreatePoint = () => {
         }
 
         await api.post('point', data)
-
+        setLoading(false)
         alert('Ponto de coleta cadastrado com sucesso')
 
         history.push('/')
@@ -150,7 +155,9 @@ const CreatePoint = () => {
     }
 
     return (
+
         <div id="page-create-point">
+
             <header>
                 <img src={logo} alt="Ecoleta" />
                 <Link to="/">
@@ -262,10 +269,12 @@ const CreatePoint = () => {
                     </ul>
                 </fieldset>
 
-                <button type="submit">Cadastrar ponto de coleta</button>
+                <button type="submit">
+                    Cadastrar ponto de coleta
+                    {loading && <Loader />}
+                </button>
 
             </form>
-
         </div>
     )
 }
