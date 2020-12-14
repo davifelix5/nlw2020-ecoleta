@@ -50,7 +50,7 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        if (JSON.stringify(selectedUf) == '{}') return  // Objeto vazio
+        if (JSON.stringify(selectedUf) == '{}') return  // Objeto vazio (tenta !!selectedUf)
         ibge.get<CityIBGE[]>(`${selectedUf}/municipios`)
             .then(response => {
                 setCities(response.data.map(city => {
